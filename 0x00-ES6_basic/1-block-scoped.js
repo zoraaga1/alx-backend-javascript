@@ -1,16 +1,13 @@
 /* eslint-disable vars-on-top */
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-var */
 export default function taskBlock(trueOrFalse) {
-  // eslint-disable-next-line block-scoped-var
-  let task = false;
-  // eslint-disable-next-line block-scoped-var
-  let task2 = true;
+  const task = false;
+  const task2 = true;
 
   if (trueOrFalse) {
-    // eslint-disable-next-line no-redeclare
-    task = true;
-    // eslint-disable-next-line no-redeclare
-    task2 = false;
+    const task = true;
+    const task2 = false;
   }
 
   // eslint-disable-next-line block-scoped-var
