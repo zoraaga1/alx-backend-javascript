@@ -4,16 +4,16 @@ function calculateNumber(type, a, b) {
   let result = 0;
   switch (type) {
   case 'SUM':
-  result = a_rounded + b-rounded;
+  result = a_rounded + b_rounded;
   break;
     case 'SUBTRACT':
-  result = a_rounded - b-rounded;
+  result = a_rounded - b_rounded;
   break;
   case 'DIVIDE':
-    if (b-rounded === 0) {
+    if (b_rounded === 0) {
           result = "Error";
     } else {
-          result = a_rounded / b-rounded;
+          result = a_rounded / b_rounded;
     }
     break;
   }
