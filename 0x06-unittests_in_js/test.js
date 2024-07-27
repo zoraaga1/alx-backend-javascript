@@ -1,3 +1,11 @@
-const Utils = require('./5-payment');
+const { expect } = require('chai');
+const getPaymentTokenFromAPI = require('./6-payment_token');
 
-console.log(Utils.sendPaymentRequestToAPI);  // This should log the function definition
+describe('getPaymentTokenFromAPI', () => {
+  it('returns the right success message', (done) => {
+    getPaymentTokenFromAPI(true).then(({ data }) => {
+      expect(data).to.equal('Successful response from the API');
+      done();
+    });
+  });
+});
