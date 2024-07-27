@@ -1,30 +1,20 @@
-const { expect } = require('chai');
 const request = require('request');
-const app = require('./api');
+const { expect } = require('chai');
 
-const PORT = 7865;
-const BASE_URL = `http://localhost:${PORT}`;
+const baseUrl = 'http://localhost:7865';
 
 describe('GET /', () => {
-  let server;
-
-  before((done) => {
-    server = app.listen(PORT, done);
-  });
-
-  after((done) => {
-    server.close(done);
-  });
-
   it('should return a status code of 200', (done) => {
-    request.get(BASE_URL, (error, response) => {
+    request.get(`${baseUrl}/`, (error, response) => {
+      if (error) return done(error);
       expect(response.statusCode).to.equal(200);
       done();
     });
   });
 
   it('should return the correct message', (done) => {
-    request.get(BASE_URL, (error, response, body) => {
+    request.get(`${baseUrl}/`, (error, response, body) => {
+      if (error) return done(error);
       expect(body).to.equal('Welcome to the payment system');
       done();
     });
